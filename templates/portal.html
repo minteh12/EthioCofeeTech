@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/portal.css' %}">
+  <title>Portal</title>
+</head>
+<body>
+  <nav>
+    <div class="nav__bar">
+      <a href="#"><span class="logo nav__logo">B</span> Buna</a>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-3-line"></i>
+      </div>
+    </div>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/service">Service</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li><a href="/logout" class="btn">LogOut</a></li> <!-- Changed href to "/logout" -->
+    </ul>
+   
+  </nav>
+
+  {% if user.is_authenticated %}
+  <!--h4 id="success-message">You're successfully logged in.-->
+  {% endif %}
+
+  <form action="{% url 'search' %}" method="GET">
+    {% csrf_token %} <!-- Added CSRF token -->
+    <input type="text" name="address" placeholder="Search by address">
+    <button type="submit">Search</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Coffee Amount</th>
+      <th>Coffee Type</th>
+    </tr>
+    {% for user in data %}
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.coffee_ammount }}</td>
+        <td>{{ user.coffee_type }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <footer>
+    <div class="container">
+        <div class="row">
+              <div class="col" id="company">
+                  <img src="static\images\coffee cup.avif" alt="" class="logo">
+                  <p>
+                    We believe in redefining the coffee experience through 
+                   a blend of dedication, craftsmanship, and cutting-edge technologies
+                  </p>
+                  <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+
+
+              <div class="col" id="services">
+                 <h3>Services</h3>
+                 <div class="links">
+                    <a href="login">Coffee Portal</a>
+                    <a href="/login">Coffee Price</a>
+                    <a href="/login">Coffee Tourism</a>
+                    <a href="/login">Coffee Diseases</a>
+                    <a href="/login">Coffee Market</a>
+                 </div>
+              </div>
+
+              <div class="col" id="useful-links">
+                 <h3>Links</h3>
+                 <div class="links">
+                    <a href="#">Home</a>
+                    <a href="about">About</a>
+                    <a href="login">Services</a>
+                    <a href="#contact">Contact</a>
+                 </div>
+              </div>
+
+              <div class="col" id="contact">
+                  <h3>Contact</h3>
+                  <div class="contact-details">
+                     <i class="fa fa-location"></i>
+                     <p>Jimma, Ethiopia</p>
+                  </div>
+                  <div class="contact-details">
+                     <i class="fa fa-phone"></i>
+                     <p>+2519</p>
+                  </div>
+              </div>
+        </div>
+
+        
+
+    </div>
+ </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var successMessage = document.getElementById('success-message');
+      if (successMessage) {
+        setTimeout(function() {
+          successMessage.style.display = 'none';
+        }, 5000);
+      }
+    });
+  </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/portal.js' %}"></script>
+</body>
+</html>

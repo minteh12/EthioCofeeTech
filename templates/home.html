@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css\styles.css' %}">
+    <script defer src="{% static 'js/script.js' %}"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__bar">
+        <a href="#"><span class="logo nav__logo">B</span> Buna</a>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="service">Service</a></li>
+        <li><a href="#contact">contact</a></li>
+        <li><a href="/login" class="btn">Login</a></li>
+      </ul>
+      <a href="/login" class="btn btn__large">Login</a>
+    </nav>
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="static\images\coffee cup.avif" alt="header" />
+      </div>
+      <div class="header__content">
+        <div>
+          <h1>Welcome to<br />Our Coffee<br />Projects</h1>
+        </div>
+        <p class="section__description">
+            Embark on a sensory adventure where each cup tells a tale of 
+            dedication and ingenuity. Our passion for coffee extends beyond 
+            tradition, embracing the future with cutting-edge technologies. 
+            Join us as we elevate your coffee journey, redefining excellence 
+            one brew at a time. Your refined coffee experience awaits, crafted
+            with a blend of innovation, commitment, and an unwavering love for 
+            the art of brewing.
+        </p>
+        <div class="header__btn">
+          <a href=" " class="btn">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="static\images\2.jpg" alt="bg" class="about__bg-1" />
+        <img src="static\images\1.jpg" alt="bg" class="about__bg-2" />
+        <img src="static\images\download (2).jpg" alt="about" class="about__img" />
+      </div>
+      <div class="about__content">
+        <h2 class="section__header">About Us</h2>
+        <p class="section__description">
+            We believe in redefining the 
+            coffee experience through a blend of dedication, craftsmanship, 
+            and cutting-edge technologies. Our journey began with a simple 
+            yet profound love for the art of brewing, and it has evolved into 
+            a commitment to providing coffee enthusiasts with a unique and refined
+            journey.
+        </p>
+        <div class="about__btn">
+          <a href="about " class="btn">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container service__container" id="service">
+      <h2 class="section__header">Our Services</h2>
+      <div class="service__grid">
+        <div class="service__card">
+          <img src="static\images\portal.png">
+          <h4>Coffee Portal</h4>
+          <p>
+            Our coffee portal serves as a comprehensive platform connecting coffee
+            buyers and sellers worldwide.
+          </p>
+          <a href="/login" class="read-more-btn">More</a>
+        </div>
+        <div class="service__card">
+          <img src="static\images\disease.jpg">
+          <h4>Coffee Diseases</h4>
+          <p>
+            Leveraging cutting-edge technology and agronomic expertise, our coffee 
+            disease prediction service helps identify...
+          </p>
+          <a href="#" class="read-more-btn">More</a>
+        </div>
+        <div class="service__card">
+          <img src="static\images\market1.jpg">
+          <h4>Coffee Market</h4>
+          <p>
+            This service utilizes advanced data analytics and machine learning 
+            algorithms to forecast trends in the coffee market. 
+          </p>
+          <a href="#" class="read-more-btn">More</a>
+        </div>
+        <div class="service__card">
+          <img src="static\images\production.jpg">
+          <h4>Coffee Production</h4>
+          <p>
+            Using advanced agricultural data analytics and predictive modeling techniques, our coffee
+            production prediction service helps... 
+          </p>
+          <a href="#" class="read-more-btn">More</a>
+        </div>
+        <div class="service__card">
+          <img src="static\images\tourism.jpg">
+          <h4>Coffee Tourism</h4>
+          <p>
+            
+            Our coffee tourism service offers immersive experiences for travelers 
+            interested in exploring the rich culture,..
+          </p>
+          <a href="/login" class="read-more-btn">More</a>
+        </div>
+        <div class="service__card">
+          <img src="static\images\coffee cup.avif">
+          <h4>Futer Work</h4>
+          <p>
+            From pay-per-click (PPC) advertising to social media marketing, we
+            ensure your brand stands out in the crowded digital.
+          </p>
+          <a href="#" class="read-more-btn">More</a>
+        </div>
+      </div>
+    </section>
+
+   
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                  <div class="col" id="company">
+                      <img src="static\images\coffee cup.avif" alt="" class="logo">
+                      <p>
+                        We believe in redefining the coffee experience through 
+                       a blend of dedication, craftsmanship, and cutting-edge technologies
+                      </p>
+                      <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                      </div>
+                  </div>
+
+
+                  <div class="col" id="services">
+                     <h3>Services</h3>
+                     <div class="links">
+                        <a href="login">Coffee Portal</a>
+                        <a href="/login">Coffee Price</a>
+                        <a href="/login">Coffee Tourism</a>
+                        <a href="/login">Coffee Diseases</a>
+                        <a href="/login">Coffee Market</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="useful-links">
+                     <h3>Links</h3>
+                     <div class="links">
+                        <a href="#">Home</a>
+                        <a href="about">About</a>
+                        <a href="login">Services</a>
+                        <a href="#contact">Contact</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="contact">
+                      <h3>Contact</h3>
+                      <div class="contact-details">
+                         <i class="fa fa-location"></i>
+                         <p>Jimma, Ethiopia</p>
+                      </div>
+                      <div class="contact-details">
+                         <i class="fa fa-phone"></i>
+                         <p>+2519</p>
+                      </div>
+                  </div>
+            </div>
+
+            
+
+        </div>
+     </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
